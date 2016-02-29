@@ -18,6 +18,7 @@
 		7B466FA01C7364AC004963CF /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B466F9F1C7364AC004963CF /* PostCell.m */; };
 		7B466FA71C73A43E004963CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B466FA51C73A43E004963CF /* Main.storyboard */; };
 		7B466FAD1C73AD13004963CF /* AddDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B466FAC1C73AD13004963CF /* AddDestination.m */; };
+		7B8363681C84C95200F2A223 /* AuthenticationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8363671C84C95200F2A223 /* AuthenticationVC.m */; };
 		7BD1F2491C7CD37900ECF719 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2481C7CD37900ECF719 /* DataService.m */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,8 @@
 		7B466FA61C73A43E004963CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B466FAB1C73AD13004963CF /* AddDestination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDestination.h; sourceTree = "<group>"; };
 		7B466FAC1C73AD13004963CF /* AddDestination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDestination.m; sourceTree = "<group>"; };
+		7B8363661C84C95200F2A223 /* AuthenticationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationVC.h; sourceTree = "<group>"; };
+		7B8363671C84C95200F2A223 /* AuthenticationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationVC.m; sourceTree = "<group>"; };
 		7BD1F2471C7CD37900ECF719 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
 		7BD1F2481C7CD37900ECF719 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +182,8 @@
 				7B466F691C72CB32004963CF /* ViewController.m */,
 				7B466FAB1C73AD13004963CF /* AddDestination.h */,
 				7B466FAC1C73AD13004963CF /* AddDestination.m */,
+				7B8363661C84C95200F2A223 /* AuthenticationVC.h */,
+				7B8363671C84C95200F2A223 /* AuthenticationVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				TargetAttributes = {
 					7B466F5E1C72CB32004963CF = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Z394YH8B5F;
 					};
 					7B466F771C72CB32004963CF = {
 						CreatedOnToolsVersion = 7.2;
@@ -328,6 +334,7 @@
 				7BD1F2491C7CD37900ECF719 /* DataService.m in Sources */,
 				7B466F641C72CB32004963CF /* main.m in Sources */,
 				7B466FAD1C73AD13004963CF /* AddDestination.m in Sources */,
+				7B8363681C84C95200F2A223 /* AuthenticationVC.m in Sources */,
 				7B466FA01C7364AC004963CF /* PostCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,10 +474,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PwC_Deliverable2_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.VernonMartin.PwC-Deliverable2-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -478,10 +488,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PwC_Deliverable2_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.VernonMartin.PwC-Deliverable2-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
