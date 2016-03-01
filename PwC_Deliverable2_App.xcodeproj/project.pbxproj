@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		7B466F641C72CB32004963CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B466F631C72CB32004963CF /* main.m */; };
-		7B466F671C72CB32004963CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B466F661C72CB32004963CF /* AppDelegate.m */; };
 		7B466F6A1C72CB32004963CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B466F691C72CB32004963CF /* ViewController.m */; };
 		7B466F6F1C72CB32004963CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B466F6E1C72CB32004963CF /* Assets.xcassets */; };
 		7B466F721C72CB32004963CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B466F701C72CB32004963CF /* LaunchScreen.storyboard */; };
 		7B466F7D1C72CB32004963CF /* PwC_Deliverable2_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B466F7C1C72CB32004963CF /* PwC_Deliverable2_AppTests.m */; };
 		7B466F881C72CB32004963CF /* PwC_Deliverable2_AppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B466F871C72CB32004963CF /* PwC_Deliverable2_AppUITests.m */; };
-		7B466F9B1C7354E2004963CF /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B466F9A1C7354E2004963CF /* Post.m */; };
 		7B466FA01C7364AC004963CF /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B466F9F1C7364AC004963CF /* PostCell.m */; };
 		7B466FA71C73A43E004963CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B466FA51C73A43E004963CF /* Main.storyboard */; };
 		7B466FAD1C73AD13004963CF /* AddDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B466FAC1C73AD13004963CF /* AddDestination.m */; };
+		7B4AC89D1C85EAF400FCED4A /* destinations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B4AC89B1C85EAF400FCED4A /* destinations.xcdatamodeld */; };
+		7B4AC8A21C85EC0000FCED4A /* Destinations+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4AC89F1C85EC0000FCED4A /* Destinations+CoreDataProperties.m */; };
+		7B4AC8A31C85EC0000FCED4A /* Destinations.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4AC8A11C85EC0000FCED4A /* Destinations.m */; };
+		7B4AC8A51C85F1C900FCED4A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4AC8A41C85F1C900FCED4A /* CoreData.framework */; };
 		7B8363681C84C95200F2A223 /* AuthenticationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8363671C84C95200F2A223 /* AuthenticationVC.m */; };
-		7BD1F2491C7CD37900ECF719 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2481C7CD37900ECF719 /* DataService.m */; };
+		7B8363B81C84DB5E00F2A223 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8363B71C84DB5E00F2A223 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +44,6 @@
 /* Begin PBXFileReference section */
 		7B466F5F1C72CB32004963CF /* PwC_Deliverable2_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PwC_Deliverable2_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B466F631C72CB32004963CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7B466F651C72CB32004963CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7B466F661C72CB32004963CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7B466F681C72CB32004963CF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7B466F691C72CB32004963CF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7B466F6E1C72CB32004963CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,17 +55,21 @@
 		7B466F831C72CB32004963CF /* PwC_Deliverable2_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PwC_Deliverable2_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B466F871C72CB32004963CF /* PwC_Deliverable2_AppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PwC_Deliverable2_AppUITests.m; sourceTree = "<group>"; };
 		7B466F891C72CB32004963CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B466F991C7354E2004963CF /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
-		7B466F9A1C7354E2004963CF /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		7B466F9E1C7364AC004963CF /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		7B466F9F1C7364AC004963CF /* PostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		7B466FA61C73A43E004963CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B466FAB1C73AD13004963CF /* AddDestination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDestination.h; sourceTree = "<group>"; };
 		7B466FAC1C73AD13004963CF /* AddDestination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDestination.m; sourceTree = "<group>"; };
-		7B8363661C84C95200F2A223 /* AuthenticationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationVC.h; sourceTree = "<group>"; };
-		7B8363671C84C95200F2A223 /* AuthenticationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationVC.m; sourceTree = "<group>"; };
-		7BD1F2471C7CD37900ECF719 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
-		7BD1F2481C7CD37900ECF719 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		7B4AC89C1C85EAF400FCED4A /* destinations.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = destinations.xcdatamodel; sourceTree = "<group>"; };
+		7B4AC89E1C85EC0000FCED4A /* Destinations+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Destinations+CoreDataProperties.h"; sourceTree = "<group>"; };
+		7B4AC89F1C85EC0000FCED4A /* Destinations+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Destinations+CoreDataProperties.m"; sourceTree = "<group>"; };
+		7B4AC8A01C85EC0000FCED4A /* Destinations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Destinations.h; sourceTree = "<group>"; };
+		7B4AC8A11C85EC0000FCED4A /* Destinations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Destinations.m; sourceTree = "<group>"; };
+		7B4AC8A41C85F1C900FCED4A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7B8363661C84C95200F2A223 /* AuthenticationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthenticationVC.h; path = PwC_Deliverable2_App/AuthenticationVC.h; sourceTree = "<group>"; };
+		7B8363671C84C95200F2A223 /* AuthenticationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthenticationVC.m; path = PwC_Deliverable2_App/AuthenticationVC.m; sourceTree = "<group>"; };
+		7B8363B41C84DA9100F2A223 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "../../../xCode Projects/testing/testing/AppDelegate.h"; sourceTree = "<group>"; };
+		7B8363B71C84DB5E00F2A223 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "../../../xCode Projects/testing/testing/AppDelegate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B4AC8A51C85F1C900FCED4A /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +101,7 @@
 		7B466F561C72CB32004963CF = {
 			isa = PBXGroup;
 			children = (
+				7B4AC8A41C85F1C900FCED4A /* CoreData.framework */,
 				7B466F611C72CB32004963CF /* PwC_Deliverable2_App */,
 				7B466F7B1C72CB32004963CF /* PwC_Deliverable2_AppTests */,
 				7B466F861C72CB32004963CF /* PwC_Deliverable2_AppUITests */,
@@ -116,12 +122,12 @@
 		7B466F611C72CB32004963CF /* PwC_Deliverable2_App */ = {
 			isa = PBXGroup;
 			children = (
-				7BD1F2461C7CD34C00ECF719 /* Database */,
-				7B466F981C7354AF004963CF /* Model */,
+				7B4AC8A61C85F48500FCED4A /* Model/Database */,
 				7B466F9C1C736468004963CF /* View */,
 				7B466FA41C739101004963CF /* Controller */,
-				7B466F651C72CB32004963CF /* AppDelegate.h */,
-				7B466F661C72CB32004963CF /* AppDelegate.m */,
+				7B4AC8A71C85F51800FCED4A /* TouchID Auth */,
+				7B8363B41C84DA9100F2A223 /* AppDelegate.h */,
+				7B8363B71C84DB5E00F2A223 /* AppDelegate.m */,
 				7B466F6E1C72CB32004963CF /* Assets.xcassets */,
 				7B466F731C72CB32004963CF /* Info.plist */,
 				7B466F621C72CB32004963CF /* Supporting Files */,
@@ -155,15 +161,6 @@
 			path = PwC_Deliverable2_AppUITests;
 			sourceTree = "<group>";
 		};
-		7B466F981C7354AF004963CF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7B466F991C7354E2004963CF /* Post.h */,
-				7B466F9A1C7354E2004963CF /* Post.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		7B466F9C1C736468004963CF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,19 +179,31 @@
 				7B466F691C72CB32004963CF /* ViewController.m */,
 				7B466FAB1C73AD13004963CF /* AddDestination.h */,
 				7B466FAC1C73AD13004963CF /* AddDestination.m */,
-				7B8363661C84C95200F2A223 /* AuthenticationVC.h */,
-				7B8363671C84C95200F2A223 /* AuthenticationVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		7BD1F2461C7CD34C00ECF719 /* Database */ = {
+		7B4AC8A61C85F48500FCED4A /* Model/Database */ = {
 			isa = PBXGroup;
 			children = (
-				7BD1F2471C7CD37900ECF719 /* DataService.h */,
-				7BD1F2481C7CD37900ECF719 /* DataService.m */,
+				7B4AC89E1C85EC0000FCED4A /* Destinations+CoreDataProperties.h */,
+				7B4AC89F1C85EC0000FCED4A /* Destinations+CoreDataProperties.m */,
+				7B4AC8A01C85EC0000FCED4A /* Destinations.h */,
+				7B4AC8A11C85EC0000FCED4A /* Destinations.m */,
+				7B4AC89B1C85EAF400FCED4A /* destinations.xcdatamodeld */,
 			);
-			name = Database;
+			name = Model/Database;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		7B4AC8A71C85F51800FCED4A /* TouchID Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7B8363661C84C95200F2A223 /* AuthenticationVC.h */,
+				7B8363671C84C95200F2A223 /* AuthenticationVC.m */,
+			);
+			name = "TouchID Auth";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,13 +337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B466F9B1C7354E2004963CF /* Post.m in Sources */,
 				7B466F6A1C72CB32004963CF /* ViewController.m in Sources */,
-				7B466F671C72CB32004963CF /* AppDelegate.m in Sources */,
-				7BD1F2491C7CD37900ECF719 /* DataService.m in Sources */,
+				7B8363B81C84DB5E00F2A223 /* AppDelegate.m in Sources */,
 				7B466F641C72CB32004963CF /* main.m in Sources */,
 				7B466FAD1C73AD13004963CF /* AddDestination.m in Sources */,
+				7B4AC89D1C85EAF400FCED4A /* destinations.xcdatamodeld in Sources */,
 				7B8363681C84C95200F2A223 /* AuthenticationVC.m in Sources */,
+				7B4AC8A21C85EC0000FCED4A /* Destinations+CoreDataProperties.m in Sources */,
+				7B4AC8A31C85EC0000FCED4A /* Destinations.m in Sources */,
 				7B466FA01C7364AC004963CF /* PostCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +487,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PwC_Deliverable2_App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.VernonMartin.PwC-Deliverable2-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,6 +502,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PwC_Deliverable2_App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.VernonMartin.PwC-Deliverable2-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -586,6 +598,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7B4AC89B1C85EAF400FCED4A /* destinations.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7B4AC89C1C85EAF400FCED4A /* destinations.xcdatamodel */,
+			);
+			currentVersion = 7B4AC89C1C85EAF400FCED4A /* destinations.xcdatamodel */;
+			path = destinations.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7B466F571C72CB32004963CF /* Project object */;
 }

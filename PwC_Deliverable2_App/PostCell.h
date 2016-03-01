@@ -7,16 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Post.h"
-#import "DataService.h"
+#import "Destinations.h"
 
-@interface PostCell : UITableViewCell{
-    DataService *myData;
-}
+@interface PostCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *destinationImage;
 @property (weak, nonatomic) IBOutlet UILabel     *destinationName;
 @property (weak, nonatomic) IBOutlet UILabel     *destinationDescription;
-@property (weak, nonatomic) IBOutlet UIImageView *destinationImage;
 
-- (void)configureCell:(Post*)post;
+- (void)configureCell:(Destinations *)dest;
+
 @end

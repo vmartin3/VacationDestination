@@ -7,15 +7,12 @@
 //
 
 #import "AddDestination.h"
-#import "Post.h"
-#import "Singleton.h"
 
 @implementation AddDestination
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     myData = [DataService sharedService];
     
     //Makes image into a circle
     [[self.destinationImage layer]setCornerRadius:self.destinationImage.frame.size.width / 2];
@@ -23,6 +20,16 @@
     
     self.pickDestinationImage = [[UIImagePickerController alloc]init];
     self.pickDestinationImage.delegate = self;
+    
+    //Dismiss Keyboard
+    [self.destinationNameField setDelegate:self];
+    [self.destinationDescriptionField setDelegate:self];
+}
+
+//Dismiss Keybaord
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 //Brings up camera roll and replaces the placeholder image with image selected
@@ -37,16 +44,22 @@
     [self presentViewController: self.pickDestinationImage animated: YES completion: nil];
 }
 
+- (NSManagedObjectContext *)managedObjectContext{
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        self.context = [delegate managedObjectContext];
+    }
+    return self.context;
+}
+
 - (IBAction)addNewDestination:(id)sender {
     if (self.destinationNameField && self.destinationDescriptionField && self.destinationImage) {
-        
-    UIImage *image = self.destinationImage.image;
-    NSString *imagePath;
-    imagePath = [myData saveImageAndCreatePath:image];
-    
-    Post *post = [[Post alloc]initWithDestinationInformation:imagePath destinationName:self.destinationNameField.text destinationDescription:self.destinationDescriptionField.text];
-    [myData addPosts:post];
-        
+            NSManagedObjectContext *context = [self managedObjectContext];
+        Destinations *newDestination = [NSEntityDescription insertNewObjectForEntityForName:@"Destinations" inManagedObjectContext:context];
+        [newDestination setDestinationName:self.destinationNameField.text];
+        [newDestination setDestinationDescription:self.destinationDescriptionField.text];
+        [newDestination setDestinationImage:self.destinationImage.image];
+        [context save:nil];
     }
 }
 @end

@@ -7,13 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "Post.h"
 #import "PostCell.h"
-#import "Singleton.h"
 @import UIKit;
 
 @interface ViewController ()
-
+    @property NSMutableArray *destinations;
 @end
 
 @implementation ViewController
@@ -21,16 +19,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Creating instance of DataService which is a singleton and will return the same instance of the class when it is created allowing access to the data from any class
-    myData = [DataService sharedService];
-    
     //Look for data in this table
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+}
+
+- (NSManagedObjectContext *)managedObjectContext{
+    NSManagedObjectContext *context;
+    id delegate = [[UIApplication sharedApplication] delegate];
     
-    //Loads previous post and listens for when new posts are loaded
-    [myData loadPosts];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onPostsLoaded:) name:@"postsLoaded" object:nil];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    
+    return context;
+}
+                                           
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    // Fetch the destinations from database
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Destinations"];
+    self.destinations = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+        
+    [self.tableView reloadData];
 }
 
 //Overwriting necessary Table Methods when working with UITableView
@@ -40,7 +52,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //Creates number of rows based on the length of the array aka how many posts there are
-    return myData.loadedPosts.count;
+    return self.destinations.count;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -50,23 +62,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    self.post = myData.loadedPosts[indexPath.row];
-    
     PostCell *cell = (PostCell*)[tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    Destinations *destination = [self.destinations objectAtIndex:indexPath.row];
     if (cell) {
-        [cell configureCell:self.post];
+        [cell configureCell:destination];
         return cell;
     }else{
         cell = [[PostCell alloc]init];
-        [cell configureCell:self.post];
+        [cell configureCell:destination];
         return cell;
     }
-
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [[myData loadedPosts] removeObjectAtIndex:indexPath.row];
+
+        [[self managedObjectContext] deleteObject:[self.destinations objectAtIndex:indexPath.row]];
+        [[self managedObjectContext]save:nil];
+        
+        [self.destinations removeObjectAtIndex:indexPath.row];
         [tableView reloadData];
     }
 }

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Post.h"
 
 @interface Singleton : UIViewController
 {
@@ -17,7 +16,6 @@
 @property NSMutableArray* allPostedDestinations;
 + (Singleton *) sharedSingleton;
 - (void)initialPost;
-- (void)addPost:(Post *)post;
 - (id)init;
 
 @end

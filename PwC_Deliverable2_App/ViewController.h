@@ -7,18 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Post.h"
-#import "Singleton.h"
-#import "DataService.h"
+#import <CoreData/CoreData.h>
+#import "AddDestination.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-{
-    Singleton* mySingleton;
-    DataService *myData;
-}
+
 - (IBAction)informationButtonPressed:(id)sender;
 - (IBAction)gotItButtonPressed:(id)sender;
-- (void)onPostsLoaded:(NSNotification *)notif;
+- (NSManagedObjectContext *)managedObjectContext;
+- (void)viewDidAppear:(BOOL)animated;
 
 //Declaring properties for information screen
 @property (weak, nonatomic) IBOutlet UIView         *informationScreen;
@@ -33,7 +30,6 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property Post *post;
 
 @end
 

@@ -7,24 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
-#import "Singleton.h"
-#import "DataService.h"
+#import <CoreData/CoreData.h>
+#import "Destinations.h"
 
 
 @interface AddDestination : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-{
-    Singleton* mySingleton;
-    DataService* myData;
-}
+
 - (IBAction)addNewDestination:(id)sender;
 - (IBAction)addImagePressed:(id)sender;
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary<NSString *,id> *)editingInfo;
-
+- (NSManagedObjectContext *)managedObjectContext;
 
 @property (weak, nonatomic) IBOutlet UITextField *destinationNameField;
 @property (weak, nonatomic) IBOutlet UITextField *destinationDescriptionField;
 @property (weak, nonatomic) IBOutlet UIImageView *destinationImage;
 @property UIImagePickerController *pickDestinationImage;
+@property NSManagedObjectContext *context;
 
 @end

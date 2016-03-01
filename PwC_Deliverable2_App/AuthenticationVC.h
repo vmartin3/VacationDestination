@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AuthenticationVC : UIViewController
+//This method runs as soon as the view is loaded
 -(void) viewWillAppear:(BOOL)animated;
 @end
